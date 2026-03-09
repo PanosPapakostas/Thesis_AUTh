@@ -189,12 +189,12 @@ extractRC
 
 # Create SPEF file and perform Sign-off STA
 setMultiCpuUsage -remoteHost 4
-#setExtractRCMode -engine postRoute -effortlevel signoff -coupled true -lefTechFileMap extr.aps25_cpu_chip.layermap.log 
-#extractRC
-#signoffTimeDesign -reportOnly
-#signoffOptDesign -all
-#signoffOptDesign -setup
-#signoffOptDesign -area
+setExtractRCMode -engine postRoute -effortlevel signoff -coupled true -lefTechFileMap extr.aps25_cpu_chip.layermap.log 
+extractRC
+signoffTimeDesign -reportOnly
+signoffOptDesign -all
+signoffOptDesign -setup
+signoffOptDesign -area
 report_timing -late -view fast > ${_SIGNOFF}/FAST/report_setup_timing.txt
 report_timing -early -view fast  > ${_SIGNOFF}/FAST/report_hold_timing.txt
 report_power -view fast > ${_SIGNOFF}/FAST/report_power.txt
